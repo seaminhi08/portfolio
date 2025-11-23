@@ -1,0 +1,374 @@
+.story-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    background-color: #fff;
+    /* ✅ 수정됨 */
+    padding: 50px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* 상단 타이틀 */
+.page-title {
+
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.page-title img {
+    width: 100%;
+    max-width: 1188px;
+    height: 400px;
+    transform: translateY(-13%);
+}
+
+.page-bs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.page-bs img {
+    max-width: 525px;
+    width: 100%;
+    height: auto;
+    /* ✅ 비율 유지 */
+    margin-top: -402px;
+    /* 👈 살짝 위로 올리기 */
+}
+
+/* 네비게이션 버튼 (기존, 필요 시 삭제 가능) */
+.story-nav {
+    display: flex;
+    z-index: 10;
+    transform: translateY(-120px);
+    width: 50%;
+    height: 30px;
+    gap: 20px;
+}
+
+/* 브랜드 이야기, 매장위치 박스 */
+.nav-buttons {
+    color: #444;
+    background-color: #d3a662;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    transform: translate(324px, -35px);
+    width: 50%;
+    height: 20%;
+    white-space: nowrap;
+    border-radius: 15px;
+    padding: 40px 176px;
+}
+
+.story-nav .nav-buttons .bt1 {
+    display: inline-block;
+    transform: translate(-69px, -15px);
+    font-size: 25px;
+}
+
+.story-nav .nav-buttons .bt2 {
+    display: inline-block;
+    transform: translate(-51px, -16px);
+    font-size: 25px;
+}
+
+.nav-buttons:hover {
+    background-color: #e89006;
+}
+
+/*******************************************************************************/
+/* 새로운 버튼 섹션 (중복 없이 새 버전) */
+.story-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.button-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu {
+    padding: 14px 36px;
+    border: 1px solid #000;
+    border-radius: 9999px;
+    background: #fff;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.menu:hover {
+    background: #e6e6e6;
+}
+
+.menu.active {
+    background: #86aaa2;
+    color: #fff;
+    border-color: #86aaa2;
+}
+
+/******************/
+.sg-de {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #f3f3f3;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+    /* 🔥 hover 이벤트가 잡히도록 위로 올리기 */
+    pointer-events: auto;
+}
+
+.snack-food {
+    font-weight: 900;
+    font-size: 30px;
+    color: #000;
+    /* 진한 검정 */
+}
+
+/* ✅ divider 스타일 */
+.divider {
+    font-size: 32px;
+    font-weight: 900;
+    color: #000;
+}
+
+.dessert {
+    font-weight: 900;
+    font-size: 30px;
+    color: #60766f;
+    /* 녹색톤 글씨 */
+}
+
+/* 마우스 올렸을 때 색 살짝 진하게 */
+/* 공통 스타일 */
+.sg-de a {
+    font-weight: 900;
+    font-size: 30px;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+    /* 색 부드럽게 전환 */
+    cursor: pointer;
+}
+
+
+/* ✅ hover 효과 */
+.sg-de a:hover {
+    color: #dba261;
+    /* 마우스 올렸을 때 색상 */
+}
+
+/* ✅ active 상태 (클릭 후 유지하고 싶을 때) */
+.sg-de a.active {
+    color: #60766f;
+}
+
+/*복사하기*/
+/*--------------------------------------분식-------------------------------------------------------------*/
+foodss-box3 {
+    width: 100%;
+    max-width: 1080px;
+    min-height: 328px;
+    background-color: #E8A45A;
+    border: 2px solid #1a1919;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    padding-bottom: 30px;
+    position: relative;
+    transform: translate(0, 16%);
+    color: #ffffff;
+}
+
+.philosophy-text .title {
+    font-size: 50px;
+}
+
+.action-button-middle {
+    /*박스부모*/
+    width: 300px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 30px;
+    display: flex;
+
+
+}
+
+
+.arrow-circle1 {
+    /*동그라미*/
+    width: 30px;
+    height: 18px;
+    border-radius: 50px;
+    padding-bottom: 30px;
+    border: 2px solid#0b0b0b;
+    margin-left: 82px;
+    padding-top: 30px;
+}
+
+.middle-txt {
+    margin-left: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/*AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA*/
+.action-button-bottom {
+    width: 300px;
+    height: 74px;
+    background-color: #c04545;
+    border-radius: 30px;
+    display: flex;
+    padding-left: 43px;
+
+}
+
+.action-button-bottom img {
+    display: block;
+    /* ✅ 블록화하면 margin이 확실히 적용됨 */
+    margin-top: 11px;
+    /* 위 여백 */
+    margin-bottom: 20px;
+    /* 아래 여백 */
+    width: 50px;
+    height: 50px;
+
+}
+
+.bottom-txt {
+    margin-left: 33px;
+    font-size: 20px;
+    margin-top: 21px;
+    font-weight: bold;
+    color: #ffffff;
+    transform: translate(-17%);
+}
+
+/*******************/
+
+
+
+.foodss-box1 {
+    width: 100%;
+    max-width: 1080px;
+    min-height: 328px;
+    background-color: #fdfdfd;
+    border: 5px solid #92681A;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 30px;
+    margin: 20px;
+
+}
+
+.foodss-box2 {
+    width: 100%;
+    max-width: 1080px;
+    min-height: 328px;
+    background-color: #ffa805;
+    border: 5px;
+    border-radius: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transform: translate(3%, 1%);
+}
+
+.item-left img {
+    width: 400px;
+    height: 219px;
+}
+
+.item-right {
+    width: 300px;
+    height: 100px;
+    border-radius: 30px;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: #000000;
+    padding-top: 20px;
+
+}
+
+.subtitle {
+    margin-bottom: 10px;
+    /* 아래쪽 여백 */
+    transform: translate(-30%, 10%);
+}
+
+.title {
+    margin-top: 10px;
+    /* 위쪽 여백 */
+    transform: translate(-30%, 10%);
+}
+/***************버튼*******************************/
+.find-store-section {
+    width: 100%;
+    max-width: 1188px;
+    padding: 80px 0;
+    background-image: repeating-linear-gradient(to right,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.2) 1px,
+            transparent 1px, transparent 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    transform: 30%, 30%;
+}
+
+/* 매장찾기 버튼 스타일 */
+.store-button {
+    width: 655px;
+    height: 116px;
+    border-radius: 50px;
+    border: none;
+    background-color: #E74C3C;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fdfdfd;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
