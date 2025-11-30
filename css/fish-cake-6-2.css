@@ -1,5 +1,6 @@
-/**************************************************
+/* ✔️ 완전히 정리된 최종 fish-cake-6.css (중복 제거 + 최신 구조 유지) */
 
+/**************************************************
 기본 구조 / Story Section
 **************************************************/
 .story-content {
@@ -13,7 +14,6 @@
 }
 
 /**************************************************
-
 상단 타이틀
 **************************************************/
 .page-title {
@@ -21,11 +21,8 @@
   max-width: 1920px;
   margin: 0 auto;
   position: relative;
-  /* ⭐ 겹치는 요소의 기준 */
   overflow: visible;
-  /* ⭐ 밑으로 삐져나오는 이미지 보이게 */
 }
-
 
 .page-title img {
   width: 100%;
@@ -34,15 +31,12 @@
 }
 
 /**************************************************
-
 브랜드 배너
 **************************************************/
 .page-bs {
   position: absolute;
-  /* ⭐ 부모(.page-title)를 기준으로 겹치기 */
   left: 50%;
   bottom: 11%;
-  /* ⭐ 배너 아래쪽에 겹쳐서 내려오게 */
   transform: translateX(-50%);
   z-index: 10;
 }
@@ -53,14 +47,12 @@
 }
 
 /**************************************************
-
 상단 카테고리 버튼
 **************************************************/
 .story-navigation {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -40px;
 }
 
 .button-wrap {
@@ -70,16 +62,20 @@
 }
 
 .menu {
-  padding: 10px 80px;
+  padding: 10px 70px;
   border: 1px solid #000;
   border-radius: 999px;
   background: #fff;
   color: #000;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.25s ease;
-  transform: translate(2vw, 59%);
+  transition: 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .menu:hover {
@@ -93,17 +89,13 @@
 }
 
 /**************************************************
-
-/*======================== main1 ==========================================================*/
-/* 바탕 박스 전체 */
+메인1 – 제품 박스
+**************************************************/
 .menu-fishsbox {
   background-color: #ffffff;
   width: 90vw;
   max-width: 1080px;
-  height: auto;
-  /* 고정 높이 삭제 */
   padding-bottom: 380px;
-  /* 박스들이 빠져나오는 높이만큼 확보 */
   margin: 10% auto;
   position: relative;
   border-radius: 30px;
@@ -111,8 +103,6 @@
   overflow: visible;
 }
 
-
-/* 상단 태그 */
 .tag {
   position: absolute;
   top: 20px;
@@ -126,7 +116,6 @@
   text-align: center;
 }
 
-/* 이미지 + 박스 감싸는 영역 */
 .arrow-box {
   position: relative;
   display: flex;
@@ -134,8 +123,6 @@
   align-items: center;
 }
 
-/* 이미지 */
-/* 이미지 들어가는 틀(부모) 크기 고정 */
 .menu-left-content {
   width: 729px;
   height: 500px;
@@ -145,19 +132,13 @@
   align-items: center;
 }
 
-/* 이미지 규칙 통일 */
 .menu-left-content img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  /* ✓ 비율 유지 + 안 잘리고 보여줌 */
-  transform: none;
-  /* ✓ 위치 튐 방지 */
   max-width: none;
-  /* ✓ 균일하게 보이도록 reset */
 }
 
-/* 전체 화살표 공통 */
 .arrow-left,
 .arrow-right {
   position: absolute;
@@ -167,25 +148,21 @@
   z-index: 10;
   user-select: none;
   transform: translateX(-50%);
-  /* X만 중앙맞춤 */
 }
 
-/* 왼쪽 화살표 */
 .arrow-left {
   left: 46px;
   top: 400px;
 }
 
-/* 오른쪽 화살표 */
 .arrow-right {
   right: 6px;
   top: 395px;
 }
 
-
-/* ===== 아래 안내 + 3박스 ===== */
-
-/* 안내 + 박스 전체 위치 (이미지 아래 중앙) */
+/**************************************************
+아래 작은 메뉴 3개
+**************************************************/
 .bm-box {
   position: absolute;
   bottom: -300px;
@@ -198,32 +175,23 @@
   z-index: 20;
 }
 
-/* “클릭해 보세요~” 안내문 */
 .guide-text {
   position: absolute;
   top: 50%;
-  /* 이미지 중앙 근처 */
   left: 50%;
   transform: translate(-50%, -275%);
-  /* 박스보다 위로 올림 */
   font-size: 1.6rem;
   font-weight: 800;
   color: rgba(0, 0, 0, 0.75);
-  /* 더 잘 보이게 */
-  z-index: 30;
-  /* 박스 위로 띄움 */
   white-space: nowrap;
-  pointer-events: none;
-  /* 클릭 막지 않도록 */
+  z-index: 30;
 }
 
-/* 3개 박스 가로 정렬 */
 .menu-box-row {
   display: flex;
   gap: 16px;
 }
 
-/* 각 메뉴 박스 */
 .menu-box {
   width: 210px;
   height: 120px;
@@ -238,134 +206,92 @@
   transition: 0.2s ease;
 }
 
-
 .menu-box:hover {
   background-color: #FFE6B3;
   transform: translateY(-4px);
 }
-/**************************246********<중복>****************************************************************/
-/* 메인 영역 */
+
+/**************************************************
+🔥 사각어묵 최종 3×2 GRID (중복 제거 완료)
+**************************************************/
 .square-section {
   max-width: 1180px;
   margin: 0 auto;
 }
 
-/* 상위 타이틀 */
 .square-section h2 {
   font-size: 2rem;
   text-align: left;
   margin-bottom: 20px;
 }
 
-/* 3열 카드 */
 .square-fish-wrap {
-  display: flex;
-  flex-wrap: wrap;       /* 자동 줄바꿈 */
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  justify-items: center;
+  align-items: start;
 }
 
-
 .square-card {
-  width: calc(33.33% - 20px);   /* 3개씩 */
-  max-width: 360px;
   background: #fff;
   border: 3px solid #000;
   border-radius: 20px;
   padding: 15px;
-  box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* 텍스트 — 위/아래 가로줄 형태 강제 */
-.square-card p {
-  margin: 5px 0;
-  width: 100%;
   text-align: center;
 }
-.card-bottom {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #b8811b;
-}
-.od-txt1{
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  align-items: center;
-}
-/* 이미지 */
+
 .square-card img {
   width: 100%;
-  aspect-ratio: 4 / 3; /* 📌 세로비율 통일 */
+  height: 170px;  /* ← 여기만 고정하면 끝 */
   object-fit: contain;
-  margin: 10px 0;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-.square-card img:hover {
-  transform: scale(1.05);
+  display: block;
 }
 
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
 
-/* 모달 전체 */
+.card-bottom {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 6px;
+}
+
+/**************************************************
+모달
+**************************************************/
 .img-modal {
   display: none;
   position: fixed;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.45); /* 적당히 어두움 + 이미지 강조 */
+  background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(2px);
+  /* ⭐ 중앙 정렬 핵심! */
+
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
 
-.img-modal img {
-  width: 100%;
-  max-width: 1100px;  /* PC에서도 과하게 커지지 않게 */
-  height: auto;
-  border-radius: 20px;
-animation: zoomIn .3s ease;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
-}
-
-/* 애니메이션 */
-@keyframes zoomIn {
-  from { transform: scale(0.7); opacity: 0; }
-  to   { transform: scale(1);   opacity: 1; }
-}
 #modalImage {
-  position: fixed;
-  z-index: 10000;
-
-  opacity: 0;  /* 시작: 완전 투명 */
-
-  transition: 
-    top .35s ease,
-    left .35s ease,
-    transform .35s ease,
-    width .35s ease,
-    opacity .35s ease;
-
-  border-radius: 20px;
-}
-#modalImage {
-  max-width: 1300px;   /* ← 이제 진짜 크게 보임 */
-  width: 90%;          /* 화면 줄어들면 자동 반응 */
-  height: auto;
+  max-width: 1300px;
+  width: 90%;
   border-radius: 20px;
   opacity: 0;
   transform: scale(0.7);
   transition: all .35s ease;
+  z-index: 10000;
 }
-/* 닫기 버튼 */
+
 .modal-close {
   position: fixed;
   top: 20px;
@@ -374,331 +300,311 @@ animation: zoomIn .3s ease;
   font-weight: bold;
   color: #fff;
   cursor: pointer;
-  z-index: 10001; /* 모달 이미지보다 위 */
+  z-index: 10001;
   user-select: none;
-  transition: 0.2s;
 }
 
-.modal-close:hover {
-  color: #f5d06c; /* 오마뎅 느낌 색감 */
-  transform: scale(1.2);
-}
-
-
-
-/*======================== 슬아이드 ===================*/
+/**************************************************
+슬라이드 영역 그대로 유지
+**************************************************/
 .fish-boxs {
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
-  position: relative;
-   border-radius: 20px;
-   border: #000 solid 1px;
+  border-radius: 20px;
+  border: #000 solid 1px;
 }
 
-.arrow-box {
+/* ====================== Swiper 카드 안정화 ====================== */
+
+/* ==============================
+   Swiper 컨테이너
+================================= */
+.fish-swiper {
+  width: 100%;
+  max-width: 1180px;
+  height: 380px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ==============================
+   슬라이드 기본 구조
+================================= */
+.fish-swiper .swiper-slide {
+  width: auto !important;
+  /* 🚀 폭 폭발 방지 핵심 */
+  height: 330px;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  text-align: center;
 }
 
-.arrow-left,
-.arrow-right {
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-  padding: 10px;
-  transition: 0.2s;
+/* ==============================
+   카드 박스
+================================= */
+.fish-swiper .card-box {
+  width: 90%;
+  max-width: 300px;
 }
 
-.arrow-left:hover,
-.arrow-right:hover {
+/* ==============================
+   이미지
+================================= */
+.fish-swiper .card-box img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+/* ==============================
+   텍스트
+================================= */
+.fish-swiper h2 {
+  margin: 5px 0;
+  font-size: 1.2rem;
+}
+
+.fish-swiper .title-box {
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+}
+
+/* ==============================
+   버튼 (이건 그대로 OK)
+================================= */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
   color: #e74c3c;
 }
 
-/* 전체 감싸는 부분 */
-.slide-wrapper {
-  overflow: hidden;
-  width: 100%;
-}
 
-/* 실제 움직이는 트랙 */
-.slide-track {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.4s ease;
-}
-
-/* 카드 */
-.card-box {
-  min-width: 30%;
-  /* 3개 보이도록 */
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.card-box img {
-  width: 80%;
-  border-radius: 12px;
-}
-
-
-/*======================== 3< > ===================*/
-
-
-/*************************** 반응형 *****************************************************/
-
-/* 1024px 이하 */
+/**************************************************
+반응형
+**************************************************/
 @media (max-width: 1024px) {
-
-
-  .page-bs img {
-    width: 66%
-  }
-
+  
   .menu {
-    padding: 10px 60px;
+    padding: 9px 59px;
   }
-
-  .item-left img {
-    width: 300px;
-  }
-.right-txtbox2,
-  .right-txtbox3,
-  .right-txtbox4 {
-    width: 166px;
-    height: 135px;
-    padding-top: 4vw;
-    margin-left: 10%;
-    font-weight: bold;
-    font-size: 1.3rem;
-  }
-
-  .menu-right-content p {
-    margin: 8px -70px;
-  }
-
-
-  .menu-fishsbox {
-    width: 90vw;
-    max-width: 1080px;
-  }
-
-  .arrow-right {
-    right: 3%;
-    top: 49%;
-  }
-}
-
-/* 768px 이하 */
-@media (max-width: 768px) {
-
-  .menu-fishsbox {
-    max-width: 700px;
-    padding: 30px 10px;
-  }
-
-  .arrow-box {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .menu-left-content {
-    width: 220px;
-    height: 220px;
-  }
-
-  .menu-box-row {
+  
+  /* 1) space-between 제거하고 가운데 정렬 */
+  .frys {
     justify-content: center;
-    gap: 8px;
+    /* ✨ 양쪽 이미지가 화면 안으로 들어옴 */
+    gap: 30px;
+    /* ✨ 이미지와 텍스트 사이 거리 */
+    padding: 40px 20px;
+    /* ✨ 상하에도 여백 확보 */
+    height: auto;
+    /* ✨ 고정 높이 제거 */
+    max-width: 900px;
   }
-
-  .menu-box {
-    width: 100px;
-    height: 70px;
-    font-size: 0.9rem;
+  
+  /* 2) 이미지 위치 튐 원인 제거 */
+  
+  .img-fty-right {
+    transform: translate(-179%) !important;
   }
-
-  .arrow-left {
-    left: -20px;
-    top: 140px;
+  
+  .img-fty-left {
+    transform: translate(185%) !important;
   }
-
-  .arrow-right {
-    right: -20px;
-    top: 140px;
-  }
-  /*********************************유지하기******************************************/
-  /****************************유지하기*********************************/
-/****************************1번째*********************************/
-/****************************2번째*********************************/
-/****************************슬라이드*********************************/
-}
-
-/***************480px***************************************/
-/* 480px 이하 */
-@media (max-width: 480px) {
-  .menu {
-    padding: 5px 9px;
-  }
-
-  .menu-fishsbox {
-    max-width: 440px;
-    padding: 164px 0;
-  }
-
-  .arrow-box {
-    flex-direction: column;
-  }
-
-  .menu-left-content {
-    width: 300px;
-    height: 300px;
-    margin-top: -88px;
-    /* 원하는 만큼 위로! */
-  }
-
-  .bm-box {
-    bottom: -60px;
-  }
-
-  .menu-box-row {
-    margin-top: -20px;
-    /* 원하는 만큼 음수로 올리기 */
-    align-items: center;
-    gap: 10px;
-  }
-
-
-  .arrow-left {
-    left: 20px;
-    top: 30%;
-  }
-
-  .arrow-right {
-    right: 5px;
-    top: 39%;
-  }
-
-  .menu-box {
-    width: 124px;
-    height: 97px;
-    font-size: 0.9rem;
-    margin-top: -83px;
-    transform: translateY(75px);
-  }
-
- /*********************************유지하기******************************************/
- /****************************유지하기*********************************/
-/****************************1번째*********************************/
-/****************************2번째*********************************/
-/****************************슬라이드*********************************/
-
-
-}
-
-
-@media (max-width: 375px) {
-
-  /* 버튼 */
-  .button-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .menu {
-
-    padding: 6px 17px;
-    font-size: 0.7rem;
-  }
-
-  /* 태그 */
-  .tag {
-    top: 20px;
-    left: 10px;
-    width: 130px;
-    height: 42px;
-    line-height: 42px;
-    font-size: 1.1rem;
-  }
-
-  /* 왼쪽 이미지 */
-  .menu-left-content {
+  
+  /* 3) 이미지 크기 재조정 (태블릿 안정 사이즈) */
+  .img-fty-right img,
+  .img-fty-left img {
     width: 240px;
-    height: 240px;
-    margin: -18% auto;
+    /* ✨ 태블릿 최적 크기 */
+    height: auto;
+  }
+  .square-fish-wrap {
+    grid-template-columns: repeat(2, 1fr); /* 2열로 변경 */
+    max-width: 720px; /* 카드 2개가 안정적으로 들어가도록 */
+  }
+    .page-bs img {
+    width: 66%;
+  }
+    .fish-boxs {
+    width: 90%;
+    max-width: 1024px;}
+}
+
+@media (max-width: 768px) {
+  .square-fish-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /***************배너페이지******************/
+  .page-bs img {
+    width: 70%;
+  }
+  
+  .button-wrap {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 2vw;
+  }
+  
+  /****************버튼**********************/
+    .menu {
+      padding: 9px 59px;
+          font-size: 1.48rem;
+    /* 글자가 딱 예쁘게 보이는 크기 */
+    white-space: nowrap;
+    }
+    .menu-left-content img {
+    width: 79%;}
+}
+  
+  @media (max-width: 480px) {
+   .square-fish-wrap {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .menu-left-content img {
-    margin-top: -33%;
-    width: 77%;
+    width: 73%;
   }
 
-  /* bm박스 (이미지 아래) */
-  .bm-box {
-    position: absolute;
-    bottom: -140px;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: 10px;
-  }
-
-  /* “클릭해 보세요~” */
-  .guide-text {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1rem;
-    white-space: nowrap;
-  }
-
-  /* 3박스 */
-  .menu-box-row {
-    display: flex;
-    gap: 10px;
-    margin: 10%;
-    justify-content: center;
-  }
-
-  .menu-box {
-    width: 98px;
-    height: 81px;
-    font-size: 0.75rem;
-    margin: 0;
-    transform: translate(0%, 10%);
-  }
-
-  /* 화살표 */
-  .arrow-left {
-    left: 10px;
-    top: 45%;
-    transform: translateY(-50%);
-  }
-
+  .arrow-left,
   .arrow-right {
-    right: 10px;
-    top: 45%;
-    transform: translateY(-50%);
+    font-size: 2.5rem;
+    transform: translate(-75%, -33vw)
+  }
+  /****************배너**********************/
+  .page-bs img {
+    max-width: 360px;
+    /* 서브배너 크기 줄이기 */
+  }
+  
+  .button-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    /* 조금 더 완벽한 간격 */
+    padding-top: 6px;
+    /* 살짝 아래로 내려서 안정감 */
+  }
+   .img-fty-right img,
+  .img-fty-left img {
+    width: 180px;
   }
 
-  /* 메뉴 전체 컨테이너 */
-  .menu-fishsbox {
-    width: 95vw;
-    padding-bottom: 169px;
-    margin-bottom: 100px;
+  .img-fty-right img {
+    transform: translate(-57%);
   }
-/****************************유지하기*********************************/
-/****************************1번째*********************************/
-/****************************2번째*********************************/
-/****************************슬라이드*********************************/
+
+  .img-fty-left img {
+    transform: translate(56%);
+  }
+  /****************버튼**********************/
+
+  .menu-box-row {
+    flex-direction: column;
+    /* ✨ 가로 → 세로 */
+    align-items: center;
+    /* ✨ 가운데 정렬 */
+    gap: 14px;
+    /* ✨ 박스 사이 간격 */
+    margin: 22%;
+  }
+  
+  .menu-fishsbox {
+    padding-bottom: 310px;
+  }
+  
+  .menu-box {
+    height: auto;
+    /* ✨ 고정 높이 제거 → 텍스트 많아도 안정 */
+    padding: 16px 0;
+    /* ✨ 세로 여백 */
+    font-size: 1.1rem;
+    /* ✨ 모바일 최적화 폰트 크기 */
+  }
+  .guide-text {
+    transform: translate(-50%, -46vw);
+  }
+    .guide-text {
+    font-size: 1.4rem;
+    transform: translate(-50%, -47vw);
+  }
+    .square-fish-wrap {
+    max-width: 600px; /* 카드 2개가 안정적으로 들어가도록 */
+  }
+    .page-bs img {
+    width: 50%;
+  }
+  
+element.style {
+}
+.fish-boxs {
+    width: 84%;
+    max-width: 480px;}
+     .square-fish-wrap {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px; /* 양옆 여백 더 줘서 너무 꽉 차보이지 않게 */
+  }
+
+  .square-card {
+    max-width: 320px; /* 카드가 너무 넓어지는 걸 방지 */
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .square-card img {
+    width: 100%;
+    max-width: 180px; /* 이미지 크기 일정하게 */
+    height: auto;
+    object-fit: contain;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-bottom {
+    font-size: 0.85rem;
+  }
+}
 
  
+
+/******************************************/
+
+
+@media (max-width: 375px) {
+  
+  /***************배너페이지******************/
+  .page-bs {
+    bottom: 4%;
+    /* 더 올려서 겹침 방지 */
+    transform: translateX(-50%);
+  }
+  
+  .page-bs img {
+    max-width: 300px;
+    /* 더 작게 */
+  }
+  
+  /**********버튼******************/
+  .menu {
+    padding: 8px 21px;
+    font-size: 1rem;
+  }
+  .fish-boxs {
+    width: 84%;
+    max-width: 480px;}
+    .square-fish-wrap {
+      grid-template-columns: repeat(1, 1fr);
+    }
 }
+

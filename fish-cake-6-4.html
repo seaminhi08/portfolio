@@ -5,14 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ohmadang-시그니처</title>
+
   <link rel="icon" href="img4/h1-logo.png" type="image/png">
+
+  <!-- Reset & Style -->
   <link href="css/reset.css" rel="stylesheet">
   <link href="css/header.css" rel="stylesheet">
   <link href="css/fish-cake-6-2.css" rel="stylesheet">
   <link href="css/footer.css" rel="stylesheet">
 
+  <!-- ★ Swiper CSS 추가 ★ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- ★ Swiper JS 추가 (중요) ★ -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Custom JS -->
   <script src="script/header-1.js" defer></script>
+
+  <!-- 네 JS 두 개 -->
   <script src="script/fish-cake-6.js" defer></script>
   <script src="script/fish-cake-6-2.js" defer></script>
 </head>
@@ -269,111 +283,74 @@
   </section>
 </main>
 
-    <!----------------------------같은메뉴(중복)--------------------------------------------------------->
-    <!--****************************유지하기*********************************-->
+   <!-- 사각어묵 -->
     <section class="square-section">
-      <h2>사각어묵</h2>
+        <h2>사각어묵</h2>
+        <div class="square-fish-wrap grid-3x2">
 
-      <div class="square-fish-wrap grid-3x2">
+            <div class="square-card">
+                <p class="card-title">고추특대사각</p>
+                <img src="img5/fish1.png" class="zoom-img">
+                <p class="card-bottom">이미지를 클릭하세요</p>
+            </div>
 
-        <!-- 1 -->
-        <div class="square-card">
-          <p class="card-title">고추특대사각</p>
-          <img src="img5/fish1.png" class="zoom-img">
-          <p class="card-bottom">이미지를 클릭하세요</p>
+            <div class="square-card">
+                <p class="card-title">야채특대사각</p>
+                <img src="img5/fish2.png" class="zoom-img">
+                <p class="card-bottom">이미지를 클릭하세요</p>
+            </div>
+
+            <div class="square-card">
+                <p class="card-title">특대사각</p>
+                <img src="img5/fish3.png" class="zoom-img">
+                <p class="card-bottom">이미지를 클릭하세요</p>
+            </div>
+
+            <div class="square-card">
+                <p class="card-title">순살사각</p>
+                <img src="img5/fish4.png" class="zoom-img">
+                <p class="card-bottom">이미지를 클릭하세요</p>
+            </div>
+
+            <div class="square-card">
+                <p class="card-title">매운사각</p>
+                <img src="img5/fish5.png" class="zoom-img">
+                <p class="card-bottom">이미지를 클릭하세요</p>
+            </div>
+
+            <div class="square-card">
+                <p class="card-title">간장사각</p>
+                <img src="img5/fish6.png" class="zoom-img">
+                <p class="card-bottom">이미지를 클릭하세요</p>
+            </div>
+
         </div>
-
-        <!-- 2 -->
-        <div class="square-card">
-          <p class="card-title">야채특대사각</p>
-          <img src="img5/fish2.png" class="zoom-img">
-          <p class="card-bottom">이미지를 클릭하세요</p>
-        </div>
-
-        <!-- 3 -->
-        <div class="square-card">
-          <p class="card-title">특대사각</p>
-          <img src="img5/fish3.png" class="zoom-img">
-          <p class="card-bottom">이미지를 클릭하세요</p>
-        </div>
-
-        <!-- 4 -->
-        <div class="square-card">
-          <p class="card-title">순살사각</p>
-          <img src="img5/fish4.png" class="zoom-img">
-          <p class="card-bottom">이미지를 클릭하세요</p>
-        </div>
-
-        <!-- 5 -->
-        <div class="square-card">
-          <p class="card-title">매운사각</p>
-          <img src="img5/fish5.png" class="zoom-img">
-          <p class="card-bottom">이미지를 클릭하세요</p>
-        </div>
-
-        <!-- 6 -->
-        <div class="square-card">
-          <p class="card-title">간장사각</p>
-          <img src="img5/fish6.png" class="zoom-img">
-          <p class="card-bottom">이미지를 클릭하세요</p>
-        </div>
-
-      </div>
     </section>
+
+    <!-- 모달 -->
     <div class="img-modal" id="imageModal">
-      <span class="modal-close">x</span>
-      <img id="modalImage">
+        <span class="modal-close">x</span>
+        <img id="modalImage">
     </div>
 
+    <!-- 슬라이드 -->
+<!-- 슬라이드 -->
+<section class="fish-boxs">
+    <div class="swiper fish-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><article class="card-box"><img src="img5/fish4.png"><h2>순살어묵</h2><span class="title-box">여러 가지 맛과 모양을<br>한번에 맛볼수 있는모듬어묵</span></article></div>
+            <div class="swiper-slide"><article class="card-box"><img src="img5/fish4.png"><h2>순살어묵</h2><span class="title-box">여러 가지 맛과 모양을<br>한번에 맛볼수 있는모듬어묵</span></article></div>
+            <div class="swiper-slide"><article class="card-box"><img src="img5/fish4.png"><h2>순살어묵</h2><span class="title-box">여러 가지 맛과 모양을<br>한번에 맛볼수 있는모듬어묵</span></article></div>
+            <div class="swiper-slide"><article class="card-box"><img src="img5/fish4.png"><h2>순살어묵</h2><span class="title-box">여러 가지 맛과 모양을<br>한번에 맛볼수 있는모듬어묵</span></article></div>
+            <div class="swiper-slide"><article class="card-box"><img src="img5/fish4.png"><h2>순살어묵</h2><span class="title-box">여러 가지 맛과 모양을<br>한번에 맛볼수 있는모듬어묵</span></article></div>
+            <div class="swiper-slide"><article class="card-box"><img src="img5/fish4.png"><h2>순살어묵</h2><span class="title-box">여러 가지 맛과 모양을<br>한번에 맛볼수 있는모듬어묵</span></article></div>
+        </div>
 
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>   <!-- 여기까지만 닫아야 함 -->
+</section>
 
-
-    <!--*************************슬라이드********************************-->
-
-    <section class="fish-boxs">
-
-
-
-      <div class="arrow-box">
-
-        <span class="arrow-left">&lt;</span>
-        <article class="card-box">
-          <img src="img5/fish4.png">
-          <h2>순살어묵</h2>
-          <span class="title-box">
-            여러 가지 맛과 모양을 <br>
-            한번에 맛볼수 있는모듬어묵
-          </span>
-        </article>
-        <article class="card-box">
-          <img src="img5/fish4.png">
-          <h2>순살어묵</h2>
-          <span class="title-box">
-            여러 가지 맛과 모양을 <br>
-            한번에 맛볼수 있는모듬어묵
-          </span>
-        </article>
-        <article class="card-box">
-          <img src="img5/fish4.png">
-          <h2>순살어묵</h2>
-          <span class="title-box">
-            여러 가지 맛과 모양을 <br>
-            한번에 맛볼수 있는모듬어묵
-          </span>
-        </article>
-
-      </div>
-
-
-
-
-      <span class="arrow-right">&gt;</span>
-
-    </section>
-
-
-    <!--**************************2번째박스********************************-->
-    <!--*************************슬라이드 박스(중복)*******************************-->
 
 
 

@@ -39,3 +39,17 @@ $(document).ready(function () {
     });
 
 });
+// ====================== Swiper 슬라이드 ======================
+var swiper = new Swiper(".fish-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+});

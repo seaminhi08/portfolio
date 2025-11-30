@@ -51,7 +51,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -40px;
 }
 
 .button-wrap {
@@ -61,16 +60,20 @@
 }
 
 .menu {
-  padding: 10px 80px;
+  padding: 10px 70px;
   border: 1px solid #000;
   border-radius: 999px;
   background: #fff;
   color: #000;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.25s ease;
-  transform: translate(2vw, 59%);
+  transition: 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .menu:hover {
@@ -90,7 +93,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 25px 0;
   background-color: #f3f3f3;
   gap: 12px;
   margin-top: 4%;
@@ -288,13 +290,11 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  background-image: repeating-linear-gradient(
-    to right,
-    rgba(255,255,255,0.2),
-    rgba(255,255,255,0.2) 1px,
-    transparent 1px,
-    transparent 50px
-  );
+  background-image: repeating-linear-gradient(to right,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px,
+      transparent 50px);
 }
 
 .store-button {
@@ -308,7 +308,7 @@
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
   transition: background-color .3s ease;
 }
 
@@ -323,10 +323,6 @@
 
   .page-bs img {
     width: 66%;
-  }
-
-  .menu {
-    padding: 10px 60px;
   }
 
   .item-left img {
@@ -350,6 +346,7 @@
     transform: translateX(-39%);
   }
 
+  /***************배너페이지******************/
   .page-bs img {
     width: 70%;
   }
@@ -360,12 +357,11 @@
     gap: 2vw;
   }
 
+  /****************버튼**********************/
   .menu {
-    flex: 1;
     max-width: 30%;
     font-size: 1.1rem;
-    white-space: nowrap;
-    text-align: center;
+
   }
 
   .foodss-box1,
@@ -394,8 +390,13 @@
     z-index: 10;
   }
 
-  .arrow-left { left: 92px; }
-  .arrow-right { right: 83px; }
+  .arrow-left {
+    left: 92px;
+  }
+
+  .arrow-right {
+    right: 83px;
+  }
 
   .philosophy-list {
     text-align: left;
@@ -407,17 +408,42 @@
 480px 이하
 **************************************************/
 @media (max-width: 480px) {
+  .page-title {
+    width: 100%;
+    max-width: 480px
+  }
 
+  .page-bs {
+    bottom: 6%;
+    /* 기존 11% → 모바일 비율에 맞게 올림 */
+    transform: translateX(-50%);
+  }
+
+  /****************배너**********************/
   .page-bs img {
-    margin-top: -200px;
-    width: 80%;
+    max-width: 360px;
+    /* 서브배너 크기 줄이기 */
   }
 
+  .button-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    /* 조금 더 완벽한 간격 */
+    padding-top: 6px;
+    /* 살짝 아래로 내려서 안정감 */
+  }
+
+  /****************버튼**********************/
   .menu {
-    font-size: 1rem;
-    padding: 10px 30px;
+    padding: 9px 22px;
+    /* 균형 잡힌 버튼 크기 */
+    font-size: 1.48rem;
+    /* 글자가 딱 예쁘게 보이는 크기 */
+    white-space: nowrap;
   }
 
+  /******************************************/
   .topping-item span,
   .fry-item span {
     font-size: 1.25rem;
@@ -428,15 +454,19 @@
     line-height: 70px;
     font-size: 1.2rem;
   }
-      .arrow-left, .arrow-right{
-          top: 91%;
- }
-     .arrow-right {
-        right: 24px;
-    }
-        .arrow-left {
-        left: 16px;
-    }
+
+  .arrow-left,
+  .arrow-right {
+    top: 91%;
+  }
+
+  .arrow-right {
+    right: 24px;
+  }
+
+  .arrow-left {
+    left: 16px;
+  }
 }
 
 /**************************************************
@@ -444,10 +474,25 @@
 **************************************************/
 @media (max-width: 375px) {
 
-  .menu {
-    padding: 8px 21px;
+  /***************배너페이지******************/
+  .page-bs {
+    bottom: 4%;
+    /* 더 올려서 겹침 방지 */
+    transform: translateX(-50%);
   }
 
+  .page-bs img {
+    max-width: 300px;
+    /* 더 작게 */
+  }
+
+  /**********버튼******************/
+  .menu {
+    padding: 8px 21px;
+    font-size: 1rem;
+  }
+
+  /*************디져트버튼**************************/
   .snack-food,
   .dessert {
     font-size: 2rem;
@@ -466,7 +511,9 @@
     margin: 0 auto !important;
     text-align: center;
   }
-      .arrow-left, .arrow-right {
-        top:79%;
-    }
+
+  .arrow-left,
+  .arrow-right {
+    top: 79%;
+  }
 }

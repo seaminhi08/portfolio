@@ -239,96 +239,64 @@
 
 /*복사하기*/
 
-/*********************************************************************************/
+/****************************검생창*****************************************************/
 
-.omd-news {
-  width: 80%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 0;
-  padding: 1px;
+.news-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24%;
+    border-bottom: 1px solid #ddd;
+    max-width: 1180px;
+    margin: auto;
 }
 
-/* 💥 헤더와 검색창을 수평 배치하는 핵심 CSS 💥 */
-.news-header-wrapper {
-  display: flex;
-  align-items: center;
-  /* 세로 중앙 정렬 */
-  gap: 30px;
-  /* 헤더와 검색창 사이의 간격 */
-  background-color: #e0ac4e;
-  padding: 20px;
+/* 카테고리 영역 */
+.search-category {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
 }
 
-.omd-news h1 {
-
-  flex-shrink: 0;
-  font-size: 32px;
-  color: #4a382c;
-  margin: 0;
-
+.search-category label {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
-/*************검색창*************************/
-.twin-search-wrapper {
-  display: flex;
-  gap: 20px;
-  width: 90%;
-  max-width: 1000px;
-  margin: 30px auto;
-  justify-content: center;
+.search-category select {
+    border: none;
+    border-bottom: 2px solid #222;
+    padding: 5px;
+    font-size: 16px;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
 }
 
-.recipe-search-form {
-  flex-grow: 1;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 15px;
-}
-
-/* 카테고리 선택 부분 (제목 박스) */
-.search-field {
-  flex-shrink: 0;
-  margin-right: 15px;
-}
-
-/* 🔥 밑줄 스타일 검색창 */
-.keyword-input-wrapper {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 6px;
-}
-
-/* 🔍 아이콘 버튼 밑줄 스타일 */
-.search-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin-left: 10px;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.search-button:hover {
-  color: #000;
-}
-
+/* 검색창 */
 .search-input {
-  flex-grow: 1;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  padding: 4px 0;
+    flex: 1;
+    position: relative;
 }
 
-.recipe-search-form-form-a {
-  margin-left: 80px;
+.search-input input {
+  width: 224px;
+    border: none;
+    border-bottom: 2px solid #222;
+    padding: 32px 35px 5px 5px;
+    font-size: 16px;
+    outline: none;
 }
 
+.search-input .search-icon {
+    position: absolute;
+    right: 5px;
+    top: 37px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+}
 /*복사19*/
 
 /************************************************/
@@ -401,13 +369,10 @@
 /********************************************************************/
 /*1*/
 .news-section {
-  width: 90%;
+  width: 100%;
   max-width: 800px;
-  margin: 30px auto;
-  /* 중앙 정렬 */
-  padding: 0 10px;
+  margin: 40px auto;
 }
-
 .section-header h2 {
   font-size: 24px;
   font-weight: bold;
@@ -421,6 +386,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 16px 0;
   border-bottom: 1px dashed #ddd;
 }
 
@@ -467,10 +433,10 @@
 }
 
 .news-main-title {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: bold;
   color: #333;
-  margin: 0 0 5px 0;
+  margin-bottom: 5px;
 }
 
 .news-subtitle {
@@ -488,17 +454,13 @@
 /*GO! 스타일*/
 .click-go-button {
   flex-shrink: 0;
-  /* 버튼 크기가 줄어들지 않도록 고정 */
-  background-color: #e0ac4e;
-  /* 이미지의 주황/갈색 계열 */
-  color: white;
+  background-color: #dba261;
+  color: #fff;
   font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 8px 16px;
+  border-radius: 6px;
   text-decoration: none;
   font-size: 14px;
-  text-align: center;
-  line-height: 1;
 }
 
 /*****************뉴스기사************************/
@@ -537,7 +499,7 @@
   /* 세로 중앙 맞춤 */
   justify-content: space-between;
   /* 왼쪽 카테고리 ↔ 오른쪽 버튼 고정 */
-  gap: 10ox;
+  gap: 10px;
 }
 
 .news-category {
@@ -555,7 +517,7 @@
   /* 밑줄 제거 */
   padding: 6px 12px;
   border-radius: 8px;
-  font-weight: 500px;
+  font-weight: 500;
   transition: background 0.3s;
   margin-left: 406px;
 }
@@ -654,8 +616,28 @@ hr.long-divider {
     top: 3vw;
   }
 
-
+     .news-search-wrap {
+        padding: 23px 52%;
+    }
+  .news-title1-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+      gap: 10px;
+      width: 61%;
+      max-width: 900px;
+      margin: 0 auto;
+  }
+  .news-category{white-space:nowrap; 
+          transform: translate(2%, 2vw);
+        }
+  .click-go-button1 , .click-go-button2, .click-go-button3{
+    white-space:nowrap; 
+  }
 }
+
 
 /***************************768**px 반응형*******************************************/
 @media (max-width: 768px) {
@@ -678,7 +660,15 @@ hr.long-divider {
     /* ⛔ 기존 margin-left 효과 제거 */
     width: auto;
   }
-
+  .search-input .search-icon {
+    
+  right: -63px;}
+      .news-search-wrap {
+        padding: 21px 43%;
+    }
+    .news-title1-left {
+      width: 76%;
+    }
   .category-select {
     position: relative;
     /* 👈 transform 기준을 명확히 */
@@ -780,23 +770,28 @@ hr.long-divider {
   }
 
 
-
+    .news-search-wrap {
+        padding: 21px 15%;
+    }
+    
   .short-divider {
     width: 400px;
     border-top: 2px solid #a07a48;
   }
 
   .click-go-button1 {
-    margin-left: 43%;
+    margin-left: 36%;
   }
 
   .click-go-button2 {
-    margin-left: 65%;
+    margin-left: 58%;
   }
 
   .click-go-button3 {
-    margin-left: 51%;
+    margin-left: 45%;
   }
+  .news-main-title {
+    font-size: 0.8rem;}
 
   .news-category {
     white-space: nowrap;
@@ -835,14 +830,23 @@ hr.long-divider {
     }
   .click-go-button1 {
     margin-left: 9%;
+   padding: 6px 4px;
+        font-size: 0.8rem;
+               transform: translate(12%, 30%);
   }
 
   .click-go-button2 {
     margin-left: 24%;
+        padding: 6px 4px;
+        font-size: 0.8rem;
+                transform: translate(12%, 30%);
   }
 
   .click-go-button3 {
     margin-left: 15%;
+        padding: 6px 4px;
+        font-size: 0.8rem;
+                transform: translate(12%, 30%);
   }
 
   .news-category {
@@ -852,7 +856,7 @@ hr.long-divider {
   .news-main-title,
   .news-subtitle,
   .news-main-title {
-    font-size: 0.67rem;
+    font-size: 0.65rem;
   }
 
   .news-subtitle,
@@ -877,4 +881,12 @@ hr.long-divider {
     margin-right: -20px;/*두줄 간격*/
    transform: translate(115%, 4vw);
   }
+      .news-search-wrap {
+        padding: 21px 3%;
+    }.search-input input {
+    width: 198px;}
+        .search-input .search-icon {
+        right: -51px;
+    }
+
 }

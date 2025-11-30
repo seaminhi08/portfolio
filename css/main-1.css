@@ -1,52 +1,54 @@
 /* ============================ MAIN ============================ */
-.main {
+
+.hero {
+  position: relative;
   width: 100%;
-  width: 1920px;
-  min-height: 820px;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  overflow: hidden;
-  box-sizing: border-box;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
-.main img {
+.hero img {
   width: 100%;
-
-  height: auto;
   display: block;
-  object-fit: cover;
 }
 
 /* ============================ INFO BAR ============================ */
 .info-bar {
+  position: absolute;
+  bottom: -40px;
+  /* ← 이 숫자만 조절하면 원하는 위치 딱 나옴 */
+  left: 50%;
+  transform: translateX(-50%);
   width: min(70%, 1100px);
   height: 80px;
-  margin: 0 auto;
-  padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  color: white;
-  font-size: 1rem;
-  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  background: #b9975b;
+  color: #fff;
+  border-radius: 10px;
   overflow: hidden;
+}
+
+.signature-section {
+  padding-top: 120px;
+  /*값은 infp-bar + 여백*/
 }
 
 .notice-section,
 .store-section {
+  font-family: 'Pretendard';
   flex: 1;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 3vw;
   box-sizing: border-box;
 }
 
 .notice-section {
   background-color: #b9975b;
+  z-index: 2000;
 }
 
 .store-section {
@@ -54,17 +56,20 @@
 }
 
 .label {
+  font-family: 'Pretendard';
   color: #2D2929;
   font-size: clamp(1.3rem, 2vw, 2rem);
 }
 
 .title {
+  font-family: 'Pretendard';
   flex-grow: 1;
   font-size: clamp(0.7rem, 1vw, 1rem);
   margin-left: 1vw;
 }
 
 .date {
+  font-family: 'Pretendard';
   flex-shrink: 0;
   font-size: clamp(0.7rem, 1vw, 1rem);
 }
@@ -170,6 +175,7 @@
   color: #ec8508;
   margin-bottom: 30px;
 }
+.why{white-space:nowrap;}
 
 .promo-text p {
   font-size: clamp(1rem, 1.4vw, 1.2rem);
@@ -192,9 +198,18 @@
 }
 
 /* 순차 등장 (스태거) */
-.product-card:nth-child(1) { transition-delay: 0.15s; }
-.product-card:nth-child(2) { transition-delay: 0.3s; }
-.product-card:nth-child(3) { transition-delay: 0.45s; }
+.product-card:nth-child(1) {
+  transition-delay: 0.15s;
+}
+
+.product-card:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+.product-card:nth-child(3) {
+  transition-delay: 0.45s;
+}
+
 /* ============================ PB PRODUCT ============================ */
 .pb-products-section .product-grid {
   width: min(1188px, 90%);
@@ -283,23 +298,32 @@
   /* ⭐ 꽉 차는 이미지 */
   border-radius: 12px;
 }
+
 /* ============================ 상세페이지 ============================ */
 /* 배경 */
 .small-popup {
   position: fixed;
-  top: -5%;
-  left: -40%;
-  width: 100%;
-  height:100%;
+  top: 50%;
+  left: 40%;
+  width: auto;
+  height: auto;
   animation: fadeIn .3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
+
 @keyframes slideUp {
-  from { transform: translateY(30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* 팝업 박스 */
@@ -310,7 +334,7 @@
   border-radius: 10px;
   position: relative;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .popup-close {
@@ -378,6 +402,37 @@
   border-radius: 5px;
 }
 
+.button {
+  display: flex;
+  align-items: center;
+  background: #d79a54;
+
+  height: auto;
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 3px 10px;
+  margin: auto;
+  gap: 12px;
+}
+
+.news-mda {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.18);
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+}
+.news-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.button a {
+  padding: 6px 12px;
+  background: #ffffff66;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-left: 10px;
+  display: inline-block;
+  color: #d54525;
+   
+}
 
 
 /* ============================ 1024px ============================ */
@@ -390,7 +445,7 @@
   .info-bar {
     width: 85%;
     height: 70px;
-    margin-top: -23.6vw;
+
   }
 
   .notice-section,
@@ -417,20 +472,15 @@
     margin-bottom: 30px;
   }
 
-  .pb-products-section .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .main-container {
-    flex-direction: column;
-  }
-  
-  /* ============================ 상세페이지 ============================ */
-.small-popup {
+ 
+/* ============================ 상세페이지 ============================ */
+  .small-popup {
     position: fixed;
     top: -5%;
-    left: -28%;}
-/* ============================ 상세페이지 ============================ */
+    left: -28%;
+  }
+
+  /* ============================ 상세페이지 ============================ */
 }
 
 
@@ -442,9 +492,9 @@
   }
 
   .info-bar {
-    flex-direction: column;
+
     height: auto;
-    margin-top: -33.3vw;
+
   }
 
   .notice-section,
@@ -479,20 +529,18 @@
     gap: 20px;
   }
 
-  .bottom-news {
-    flex: 1 1 100%;
-  }
-  
   /* ============================ 상세페이지 ============================ */
-.small-popup {
+  .small-popup {
     position: fixed;
     top: -5%;
     left: -24%;
   }
-    .popup-box {
+
+  .popup-box {
     width: 393px;
-    }
-/* ============================ 상세페이지 ============================ */
+  }
+
+  /* ============================ 상세페이지 ============================ */
 }
 
 /* ============================ 480px ============================ */
@@ -503,9 +551,11 @@
   }
 
   .info-bar {
-    width: 100%;
+    width: 76%;
+    height: auto;
+    padding: 5px 0;
     flex-direction: column;
-    margin-top: -49.3vw;
+    gap: 10px;
   }
 
   .notice-section,
@@ -513,15 +563,21 @@
     padding: 0 5%;
     justify-content: space-between;
     height: 38px;
+
+
+  }
+
+  .store-section .label {
+    padding: 4px 10px;
   }
 
   .label {
     font-size: 1.1rem;
+
   }
 
   .title {
-    font-size: .75rem;
-    margin-left: 3%;
+    padding: 0 10%;
   }
 
   .signature-title .main-title {
@@ -564,17 +620,20 @@
   .news-img {
     max-width: 100%;
   }
-  
+
   /* ============================ 상세페이지 ============================ */
-.small-popup {
+  .small-popup {
     position: fixed;
     top: -5%;
     left: -10%;
   }
-    .popup-box {
+
+  .popup-box {
     width: 393px;
-    }
-/* ============================ 상세페이지 ============================ */
+  }
+.bottom-news {
+    flex: 0 0 100%;}
+  /* ============================ 상세페이지 ============================ */
 }
 
 /* ============================ 375px ============================ */
@@ -585,9 +644,7 @@
   }
 
   .info-bar {
-    width: 100%;
     flex-direction: column;
-    margin-top: -57.3vw;
   }
 
   .label {
@@ -632,15 +689,17 @@
     width: 90%;
     margin: 0 auto;
   }
-  
+
   /* ============================ 상세페이지 ============================ */
-.small-popup {
+  .small-popup {
     position: fixed;
     top: -5%;
     left: 1%;
   }
-    .popup-box {
+
+  .popup-box {
     width: 393px;
-    }
-/* ============================ 상세페이지 ============================ */
+  }
+
+  /* ============================ 상세페이지 ============================ */
 }

@@ -45,6 +45,9 @@
 /**************************************************
  * 고객의 소리 안내 테이블
  **************************************************/
+/* ==============================
+   공통 레이아웃 (데스크탑 기준)
+============================== */
 .info-section-wrapper {
   width: 100%;
   max-width: 1180px;
@@ -62,16 +65,14 @@
   color: #333;
 }
 
-/* 개인정보 안내 테이블 */
-.info-voc {
-  border-top: 1px solid #555;
+/* 개인정보 테이블 */
+.info-voc .voc-row {
+  min-height: 95px; /* 조금 더 정석 느낌 */
+  padding: 0 10px;
+  max-width: 1180px;
+  margin: 0 auto; /* 🔥 중앙정렬 */
 }
 
-.voc-row {
-  display: flex;
-  flex-wrap: nowrap;
-  border-bottom: 1px solid #ccc;
-}
 
 .info-title {
   flex: 0 0 35%;
@@ -85,6 +86,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .info-content {
@@ -95,15 +97,8 @@
   line-height: 1.6;
 }
 
-.form-row.input-single input {
-  width: 75%;
-  flex: none;
-  /* ← flex-grow 제거해서 width 강제 적용 */
-}
-
-
 /* ==============================
-   기본 스타일 (데스크탑 기준)
+   폼 영역 기본 스타일 (데스크탑)
 ============================== */
 .feedback-form {
   width: 100%;
@@ -114,7 +109,6 @@
 
 .form-row {
   display: flex;
-  align-items: stretch;
   border-top: 1px solid #ccc;
 }
 
@@ -127,40 +121,40 @@ label.required {
   color: #333;
   font-size: 18px;
   font-weight: 700;
-
+  padding: 10px;
   box-sizing: border-box;
 }
 
-.input-group,
-.input-single input,
-textarea {
-  min-height: 60px;
-  height: auto;
-}
-
 .input-group {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 0 10px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .input-group input {
   flex: 1;
+  min-width: 0;  /* ← flex 줄바꿈 방지 핵심 */
   padding: 8px 10px;
   border: 1px solid #999;
   border-radius: 4px;
   font-size: 15px;
 }
 
+.input-single input {
+  width: 100%; /* ← 안전하게 전체폭 사용 */
+}
+
 .input-textarea textarea {
-  flex-grow: 1;
+  width: 100%;
   height: 200px;
   border: 1px solid #aaa;
   resize: none;
   padding: 10px;
   font-size: 15px;
+  box-sizing: border-box;
 }
 
 /* 버튼 */
@@ -184,10 +178,43 @@ textarea {
   background: #e4e4e4;
 }
 
+
 /* ==============================
    1024px 이하 (노트북 / 태블릿 가로)
 ============================== */
 @media (max-width: 1024px) {
+    /************** voc************************/
+  .voc {
+    width: 92%;
+    height: 245px;
+  }
+   .info-section-wrapper {
+    width: 95%;          /* 🔥 가로폭 줄이기 */
+    margin: 0 auto;
+  }
+.info-title {
+    flex: 0 0 29%;        /* 🔥 라벨 폭 축소 */
+    font-size: 0.95rem;
+    padding: 16px 10px;
+    margin-left: 2%;
+  }
+
+  .info-content {
+    flex: 1;
+    font-size: 0.9rem;
+    padding: 16px 26px;
+    line-height: 1.5;
+  }
+  /**************회색선줄************************/
+  .info-voc .voc-row {
+       flex-wrap: wrap;
+
+}
+
+.info-title {
+  border-right: 0.5px solid #e5e5e5;
+}
+  /**************01************************/
   label.required {
     flex: 0 0 30%;
     font-size: 1rem;
@@ -212,6 +239,10 @@ textarea {
    768px 이하 (태블릿 세로)
 ============================== */
 @media (max-width: 768px) {
+  .voc-text {
+font-size: 1.05rem;
+  }
+  /*******************************/
   .feedback-form {
     width: 94%;
     padding: 0 3%;
@@ -237,48 +268,87 @@ textarea {
 
     padding: 10px 0;
   }
-
-  .input-group input {
-    flex: none !important;
-    width: auto;
-    /* ← 이거 안 넣어서 계속 100% 먹은 거임 */
-  }
-
-  textarea {
+  .input-single input {
     width: 100%;
-    height: 180px;
-  }
+    height: 50px;
+}
+/*************************************/
 
-  .button-container {
-    position: fixed;
-    bottom: 3vw;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    text-align: center;
-    z-index: 100;
-  }
-
-  .home-button {
-    width: 90%;
-    height: 60px;
-    font-size: 1rem;
-    background: #f7f7f7;
-  }
 }
 
 
 /* 모바일 padding 조금 강화 */
 @media (max-width: 480px) {
+   /**************** 공통 정리 *****************/
+  .form-row {
+    flex-direction: column;
+  }
+
   label.required {
-    padding: 14px 10px;
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 10px 6px;
+    font-size: 0.9rem;
+    text-align: center;
   }
 
-  .input-group input,
+  .input-group {
+    width: 100%;
+    padding: 6px 4px;
+    gap: 6px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .input-group input {
+    padding: 8px;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 0;
+  }
+
   textarea {
+    width: 100%;
+    height: 180px;
     padding: 10px;
+    font-size: 1rem;
   }
 
+  /**************** 이메일 영역 *****************/
+  #email_part1 {
+    width: 32%;
+    margin-bottom: 6px;
+  }
+
+  .email-separator {
+    width: 6%;
+    text-align: center;
+  }
+
+  #email_part2 {
+    width: 32%;
+  }
+
+  /* 도메인 직접 입력 */
+  #email_part3 {
+    width: 100%;
+   
+  }
+
+  /**************** 연락처 3분할 *****************/
+  #phone_part1,
+  #phone_part2,
+  #phone_part3 {
+    width: 30%;
+  }
+
+  /**************** textarea *****************/
+  #extarea {
+    width: 100%;
+    height: 180px;
+  }
+
+  /**************** 추가 요소 *****************/
   .voc-text {
     color: #444;
     line-height: 1.6;
@@ -289,165 +359,73 @@ textarea {
   }
 
   .voc-logo {
-    width: 85px;
-    height: 85px
-  }
-
-  /* input-group 안에서 flex 줄바꿈 허용 */
-
-
-  /* 이메일 왼쪽 input */
-  #email_part1 {
-    width: 30%;
-    margin-bottom: 8px;
-  }
-
-  /* 이메일 오른쪽 input */
-  #email_part2 {
-    width: 30%;
-  }
-
-  #email_part3 {
-    width: 92%;
-  }
-
-  /* @ 입력 고정 */
-  .email-separator {
-    width: 5%;
-    text-align: center;
-  }
-
-  #phone_part1 {
-    width: 30%;
-  }
-
-  #phone_part2 {
-    width: 30%;
-  }
-
-  #phone_part3 {
-    width: 30%;
-  }
-
-  #extarea {
-    width: 100%;
-    height: 180px;
+    width: 47px;
+    height: 47px;
   }
 }
 
 @media (max-width: 375px) {
-
-  /* 상단 박스 */
-  .voc-top {
-    padding: 40px 10px;
-  }
-
-  .voc-logo {
-    width:67px;
-    height: 67px;
-    font-size: 1rem;
-  }
-
-  .voc-text {
-    font-size: 0.5rem;
-    line-height: 1.5;
-  }
-
-
-  /* Info Title */
-  .info-title {
-    flex: 0 0 40%;
-    font-size: 13px;
-    padding: 12px 6px;
-  }
-
-  /* Info Content */
-  .info-content {
-    font-size: 13px;
-    padding: 12px 10px;
-  }
-
-  /* VOC 테이블 전체 */
-  .voc-row {
-    flex-direction: column;
-    /* 한 줄 → 두 줄 쌓이도록 */
-  }
-
-  .info-title {
-    border-right: none;
-    border-bottom: 1px solid #bbb;
-    text-align: left;
-    justify-content: flex-start;
-  }
-
-
-  /* 입력 라벨 */
-  label.required {
-    font-size: 0.9rem;
-    padding: 10px 5px;
+    .voc-text {
+      font-size: 0.65rem;
+      white-space:normal;
+    }
+    .voc-logo {
+      font-size: 0.5rem;
+    }
+        .info-content {
+        flex: 1;
+        font-size: 0.7rem;
+      }
+          .voc {
+        width: 92%;
+        height: 227px;
+    }
+  /* 이메일 그룹 전체 */
+  .email-group {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    height: auto;
+    gap: 4px;
   }
 
-
-
-  /* 이메일 왼쪽 input */
+  /* username */
   #email_part1 {
-    width: 30%;
-    margin-bottom: 8px;
-  }
-
-  /* 이메일 오른쪽 input */
-  #email_part2 {
-    width: 30%;
-  }
-
-  #email_part3 {
-    width: 92%;
-  }
-
-  /* @ 입력 고정 */
-  .email-separator {
-    width: 5%;
-    text-align: center;
-  }
-
-  #phone_part1 {
-    width: 30%;
-  }
-
-  #phone_part2 {
-    width: 30%;
-  }
-
-  #phone_part3 {
-    width: 30%;
-  }
-
-  #extarea {
-    width: 100%;
-    height: 180px;
-  }
-
-
-  /* 텍스트박스 */
-  textarea {
-    width: 100%;
-    height: 160px;
-    font-size: 0.9rem;
+    flex: 1 1 40%;
+    min-width: 0;
     padding: 8px;
   }
 
-  /* 버튼 */
-  .button-container {
-    margin-top: 40px;
-    padding-bottom: 30px;
+  /* @ */
+  .at-sign {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 0 4px;
   }
 
-  .home-button {
-    width: 95%;
-    height: 55px;
+  /* domain name */
+  #email_part2 {
+    flex: 1 1 40%;
+    min-width: 0;
+    padding: 8px;
+  }
+
+  /* 자동완성 도메인 입력창 (밑줄로 떨어트리기) */
+  .input-with-icon {
+    flex: 1 1 100%;
+    margin-top: 6px;
+  }
+
+  #email_part3 {
+    width: 100%;
+    padding: 8px;
+  }
+
+  /* label */
+  label.required {
+    padding: 12px 10px;
+    width: 100%;
     font-size: 0.9rem;
-    border-radius: 6px;
   }
 }

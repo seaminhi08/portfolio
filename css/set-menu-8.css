@@ -3,13 +3,13 @@
 기본 구조 / Story Section
 **************************************************/
 .story-content {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 40px;
-background-color: #fff;
-min-height: 100vh;
-box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  background-color: #fff;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 /**************************************************
@@ -20,8 +20,10 @@ box-sizing: border-box;
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  position: relative;   /* ⭐ 겹치는 요소의 기준 */
-  overflow: visible;    /* ⭐ 밑으로 삐져나오는 이미지 보이게 */
+  position: relative;
+  /* ⭐ 겹치는 요소의 기준 */
+  overflow: visible;
+  /* ⭐ 밑으로 삐져나오는 이미지 보이게 */
 }
 
 
@@ -30,14 +32,17 @@ box-sizing: border-box;
   height: auto;
   display: block;
 }
+
 /**************************************************
 
 브랜드 배너
 **************************************************/
 .page-bs {
-  position: absolute;   /* ⭐ 부모(.page-title)를 기준으로 겹치기 */
+  position: absolute;
+  /* ⭐ 부모(.page-title)를 기준으로 겹치기 */
   left: 50%;
-  bottom: 11%;         /* ⭐ 배너 아래쪽에 겹쳐서 내려오게 */
+  bottom: 11%;
+  /* ⭐ 배너 아래쪽에 겹쳐서 내려오게 */
   transform: translateX(-50%);
   z-index: 10;
 }
@@ -46,44 +51,49 @@ box-sizing: border-box;
   width: 100%;
   max-width: 520px;
 }
+
 /**************************************************
 
 상단 카테고리 버튼
 **************************************************/
 .story-navigation {
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-wrap {
-display: flex;
-gap: 20px;
-flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .menu {
-padding: 10px 80px;
-border: 1px solid #000;
-border-radius: 999px;
-background: #fff;
-color: #000;
-font-size: 2rem;
-font-weight: 700;
-cursor: pointer;
-transition: all 0.25s ease;
-transform: translate(0vw,59%);
+  padding: 10px 70px;
+  border: 1px solid #000;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
+
 .menu:hover {
-background-color: #e6e6e6;
+  background-color: #e6e6e6;
 }
 
 .menu.active {
-background-color: #86aaa2;
-color: #fff;
-border-color: #86aaa2;
+  background-color: #86aaa2;
+  color: #fff;
+  border-color: #86aaa2;
 }
 
 
@@ -104,7 +114,7 @@ border-color: #86aaa2;
   width: 100%;
   display: block;
   border-radius: 20px;
-margin: 4%;
+  margin: 4%;
 }
 
 .set-txt1 {
@@ -171,29 +181,20 @@ margin: 4%;
 
 /*++++++++++++++버튼++++++++++++++++++++*/
 .find-store-section {
-  position: relative;
-  z-index: 100;
-}
-
-.store-button {
-  position: relative;
-  z-index: 200;
-}
-.find-store-section {
   width: 100%;
   max-width: 1188px;
   padding: 80px 0;
-  background-image: repeating-linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.2),
-    rgba(255, 255, 255, 0.2) 1px,
-    transparent 1px,
-    transparent 50px
-  );
+  background-image: repeating-linear-gradient(to right,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2) 1px,
+      transparent 1px,
+      transparent 50px);
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
+  position: relative;
+  z-index: 100;
 }
 
 /* ✅ a태그는 inline이라 block화 필요 */
@@ -201,7 +202,8 @@ margin: 4%;
   display: inline-block;
   width: 655px;
   height: 116px;
-  line-height: 116px; /* 텍스트 수직 중앙 */
+  line-height: 116px;
+  /* 텍스트 수직 중앙 */
   border-radius: 50px;
   border: none;
   background-color: #E74C3C;
@@ -209,10 +211,13 @@ margin: 4%;
   font-weight: bold;
   color: #fdfdfd;
   text-align: center;
-  text-decoration: none; /* 밑줄 제거 */
+  text-decoration: none;
+  /* 밑줄 제거 */
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 200;
 }
 
 .store-button:hover {
@@ -225,25 +230,37 @@ margin: 4%;
 /* ================= 1020px 이하 ================= */
 @media (max-width: 1024px) {
 
-.page-bs img {
+  .page-bs img {
     width: 66%
   }
-.menu {
-padding: 10px 60px;
-}
 
-.item-left img {
-width: 300px;
-}
-.product-frys-container {
-  gap: 20px;
-  margin: 0 -10px;
-}
+  /*버튼*/
+  .menu {
+    padding: 9px 52px;
+  }
+
+  /*이미지*/
+  .set-bnner1 img {
+    width: 96%;
+  }
+
+  .set-bnner2 img {
+    width: 96%;
+  }
+
+  .item-left img {
+    width: 300px;
+  }
+
+  .product-frys-container {
+    gap: 20px;
+    margin: 0 -10px;
+  }
 
   .set-txt1 {
-    font-size: 5vw;
-    left: 8vw;
-    top: 25vw;
+    font-size: 3rem;
+    left: 16vw;
+    top: 12vw;
   }
 
   .set-price1 {
@@ -255,7 +272,7 @@ width: 300px;
 
   .set-price2 {
     font-size: 4vw;
-    bottom: -123vw;
+
     right: 8vw;
     background: rgba(218, 100, 40, 0.6);
   }
@@ -269,44 +286,47 @@ width: 300px;
 
 /* ================= 768px 이하 (모바일) ================= */
 @media (max-width: 768px) {
- .page-bs {
-  position: absolute;
-  bottom: 7%;
-  right: 10%;
-  transform: translateX(-39%)/* 중앙 정렬 해제 */
-}
+  .page-bs {
+    position: absolute;
+    bottom: 7%;
+    right: 10%;
+    transform: translateX(-39%)
+      /* 중앙 정렬 해제 */
+  }
 
+
+  /***************배너페이지******************/
   .page-bs img {
     width: 70%;
   }
- .button-wrap {
-    display: flex;
-    flex-wrap: nowrap;   /* 🔥 줄바꿈 절대 금지 */
-    justify-content: center;
-    gap: 2vw;            /* 화면비례 간격 */
+
+  /*이미지*/
+  .set-bnner1 img {
+    width: 93%;
   }
 
-  .menu {
-    flex: 1;             /* 🔥 3개가 동일한 비율로 나눠짐 */
-    max-width: 30%;      /* 🔥 너무 넓어지지 않게 제한 */
-    
-    font-size: 1.1rem;
-    white-space: nowrap; 
-    text-align: center;
+  .set-bnner2 img {
+    width: 93%;
   }
+
+  .button-wrap {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 2vw;
+  }
+
+  /****************버튼**********************/
+
   .set-bnner1,
   .set-bnner2 {
     position: relative;
     width: 90%;
   }
 
-  .set-bnner1 img,
-  .set-bnner2 img {
-    width: 768px;
-  }
 
   .set-txt1 {
-    transform: translate(-5vw, -21vw);
+    font-size: 2rem;
+    transform: translate(-8vw, -8vw);
   }
 
   .set-price1 {
@@ -314,12 +334,12 @@ width: 300px;
     right: 39vw;
     top: auto;
     bottom: 8vw;
-    transform: translate(40vw, 3vw);
+    transform: translate(33vw, 3vw);
   }
 
   .set-price2 {
     font-size: clamp(14px, 3vw, 22px);
-    right: -3%;
+    right: 7%;
     top: auto;
     bottom: 2%;
   }
@@ -329,42 +349,123 @@ width: 300px;
     height: 114px;
     font-size: 2em;
     margin-top: -2%;
-   
+
   }
-   .store-button a {
-      transform: translate(2%,4%)
-   }
-}
-@media (max-width: 480px) {
-  .page-bs img {
-margin-top: -200px;
-width: 80%;
+
+  .store-button a {
+    transform: translate(2%, 4%)
+  }
 }
 
-.menu {
-font-size: 1rem;
-padding: 10px 30px;
-}
-        .set-bnner1 img, .set-bnner2 img {
-        width: 450px;
-        margin-top: 5%;
-    }
-        .set-price1 {white-space: nowrap;}
-            .set-price2 {right: 1%;}
-            .find-store-section {padding: 24px 0;}
-            .set-price1 {right: 35vw;}
-}
-@media (max-width: 375px) {
-     .set-bnner1 img, .set-bnner2 img {
-        width: 362px;
-        margin-top: 5%;
-    }
-        .set-price1 {white-space: nowrap;}
-           .find-store-section {padding: 24px 0;}
-}
 @media (max-width: 480px) {
-    .menu {
-        font-size: 1rem;
-        padding: 7px 23px;
-    }
+  .page-title {
+    width: 100%;
+    max-width: 480px
   }
+
+  .page-bs {
+    bottom: 6%;
+    /* 기존 11% → 모바일 비율에 맞게 올림 */
+    transform: translateX(-50%);
+  }
+
+  /****************배너**********************/
+  .page-bs img {
+    max-width: 360px;
+    /* 서브배너 크기 줄이기 */
+  }
+
+  .button-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    /* 조금 더 완벽한 간격 */
+    padding-top: 6px;
+    /* 살짝 아래로 내려서 안정감 */
+  }
+
+  /****************버튼**********************/
+  .menu {
+    padding: 9px 22px;
+    /* 균형 잡힌 버튼 크기 */
+    font-size: 1.48rem;
+    /* 글자가 딱 예쁘게 보이는 크기 */
+    white-space: nowrap;
+  }
+
+  /******************************************/
+  .set-txt1 {
+    font-size: 1.8rem;
+    transform: translate(-16vw, -7vw);
+  }
+
+  .set-bnner1 img,
+  .set-bnner2 img {
+    width: 450px;
+    margin-top: 5%;
+  }
+
+  .set-price1 {
+    white-space: nowrap;
+  }
+
+  .set-price2 {
+    right: 1%;
+  }
+
+  .find-store-section {
+    padding: 24px 0;
+  }
+
+  .set-price1 {
+    right: 35vw;
+  }
+
+  .store-button {
+    width: 80%;
+    height: 83px;
+    font-size: 2em;
+    margin-top: -2%;
+    line-height: 86px;
+  }
+}
+
+@media (max-width: 375px) {
+  .page-bs {
+    bottom: 4%;
+    /* 더 올려서 겹침 방지 */
+    transform: translateX(-50%);
+  }
+
+  .page-bs img {
+    max-width: 300px;
+    /* 더 작게 */
+  }
+
+  /**********버튼******************/
+  .menu {
+    font-size: 1rem;
+    padding: 4px 19px;
+  }
+
+  .set-bnner1 img,
+  .set-bnner2 img {
+    width: 362px;
+    margin-top: 5%;
+  }
+
+  .set-price1 {
+    white-space: nowrap;
+  }
+
+  .find-store-section {
+    padding: 24px 0;
+  }
+
+  .store-button {
+    width: 80%;
+    height: 65px;
+    font-size: 1.8rem;
+    line-height: 66px;
+  }
+}

@@ -47,7 +47,7 @@ body {
   font-size: 0.95rem;
   border: 0.1rem solid transparent;
   color: #444;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 195, 83, 0.7);
   border-radius: 0.6rem;
   font-weight: bold;
   transition: background 0.2s, color 0.2s;
@@ -88,14 +88,15 @@ body {
   position: relative;
   width: 100%;
   max-width: 1200px;
-
-  /* 🔥 컨테이너 높이를 이미지에 따라 자동 조절 */
   height: auto;
 
-  /* 🔥 flex 제거 (중앙정렬은 absolute 사용하므로 필요 없음) */
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 
-  margin: 5% auto;
+
 }
 
 /* 이미지 */
@@ -110,16 +111,19 @@ body {
 .food-img6 .text-box {
   position: absolute;
   top: 50%;
-  /* 화면 정가운데 기준 */
   left: 50%;
-  /* 가로 중앙 */
-  transform: translate(-50%, -30%);
-  /* ↑ 적당히 아래로 내려앉는 값만 조절 (추천값: -20% ~ -30%) */
+  transform: translate(-50%, -50%);
+  padding: clamp(80px, 30vw, 300px) 2vw;
+  background-color: rgba(40, 30, 20, 0.6);
+  color: #fff;
+  border-radius: 1rem;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .food-img6 .text-box h2 {
   font-size: 3rem;
-  margin-bottom: 1.2vw;
+
 }
 
 .food-img6 .text-box p {
@@ -128,51 +132,36 @@ body {
 }
 
 /*===============================*/
-/* 이미지 컨테이너 */
-.container {
-  position: relative;
-}
-
 .image-container {
   position: relative;
-  width: 88%;
-  height: 420px;
-  overflow: hidden;
-  padding: 12vw;
+  width: 65%;
+
+  height: auto;
 }
 
-/*===============================*/
-/* 메인 버튼 */
+/* 왼쪽 아래 구석 배치 */
 .menu-link-button {
-  position: relative;
-  display: flex;
+  position: absolute;
+  left: clamp(200px, 40vw, 74%);
+  bottom: clamp(35px, 20vw, 321px);
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 1vw;
   white-space: nowrap;
-
-  background-image: url("../img/food7.png");
-  background-repeat: no-repeat;
-  background-size: 85px 85px;
-  background-position: right 40px center;
-
+  padding: 32px 141px;
   background-color: #c4a97a;
-
-  /* 🔥 transform에서는 X축만 사용! */
-  transform: translateX(5%);
-
-  /* 🔥 상하 위치는 margin으로 조정 */
-  margin-top: 4vw;
-
-  color: #fdfdfd;
-  font-size: 3rem;
-  font-weight: bold;
-  border-radius: 1rem;
-  padding: 4vh 17vw;
-  box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s;
+  border-radius: 50px;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  width: fit-content;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-image: url(../img/food7.png);
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  background-position: right 18px center;
 }
-
 
 /*===============================*/
 /* 반응형 =======================*/
@@ -180,7 +169,7 @@ body {
 /* 1024px 이하 */
 @media (max-width: 1024px) {
   .food-img6 img {
-    margin-top: -3.5%;
+    margin-top: -8.5%;
   }
 
   .food-img6 .text-box {
@@ -202,16 +191,18 @@ body {
   }
 
   .menu-link-button {
-    margin-top: 25%;
-    padding: 3vh;
-    background-size: 85px 85px;
-    background-position: 80% 56%;
+    left: clamp(148px, 30vw, 75%);
+    bottom: clamp(18px, 11vw, 124px);
   }
 
 }
 
 /* 768px 이하 (태블릿) */
 @media (max-width: 768px) {
+  .food-img6 img {
+    margin-top: -11.5%;
+  }
+
   .page-title {
     height: 180px;
   }
@@ -222,7 +213,7 @@ body {
   }
 
   .image-container {
-    height: 45vw;
+    height: 26vw;
   }
 
   .image-container {
@@ -231,16 +222,21 @@ body {
 
   .menu-link-button {
     margin-top: 25%;
-    padding: 3vh;
+
     background-size: 85px 85px;
     background-position: 92% 56%;
   }
 
   .food-img6 .text-box {
     width: 61%;
-    top: 31%;
+    top: 38%;
     padding: 19% 1.5%;
   }
+
+    .menu-link-button {
+        left: clamp(148px, 25vw, 75%);
+        bottom: clamp(30px, 36vw, 282px);
+    }
 }
 
 /* 480px 이하 (모바일) */
@@ -252,7 +248,7 @@ body {
 
   .food-img6 .text-box {
     width: 61%;
-    top: 36%;
+    top: 50%;
     padding: 19% 1.5%;
   }
 
@@ -282,9 +278,19 @@ body {
     background-position: 79% 32%;
     background-color: #b38b56;
   }
+
+  .menu-link-button {
+    left: clamp(161px, 25vw, 75%);
+    bottom: clamp(30px, 14vw, 203px);
+  }
 }
 
 @media (max-width: 375px) {
+  .story-nav {
+
+    transform: translateY(-11vw);
+  }
+
   .food-img6 img {
     margin-top: -18.5%;
   }
@@ -302,5 +308,11 @@ body {
 
   .food-img6 .text-box p {
     font-size: 0.7rem;
+  }
+
+  .menu-link-button {
+    left: clamp(120px, 33vw, 69%);
+    bottom: clamp(30px, 16vw, 203px);
+    padding: 1vh 5vw;
   }
 }

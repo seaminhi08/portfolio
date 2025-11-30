@@ -22,8 +22,6 @@
   width: 100%;
   max-width: 1920px;
   height: auto;
-  margin-bottom: 3vw;
-  /* transform 제거 → 자연스러운 여백 */
   object-fit: contain;
 }
 
@@ -44,14 +42,14 @@
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border-radius: 15px;
-  padding: 2vw 8vw;
-  font-size: 1.3rem;
+  border-radius: 12px;
+  padding: 1.2vw 8vw;
   cursor: pointer;
   transition: background-color 0.3s;
   white-space: nowrap;
-  transform: translate(-2vw, -3vw);
+  transform: translate(-1.2vw, -2vw);
 }
+
 
 .nav-buttons:hover {
   background-color: #e89006;
@@ -72,13 +70,19 @@
 
 /* 아이콘 */
 .shopping-bag2 {
-  transform: translate(7vw, -2.8vw);
+  transform: translate(7.5vw, -1.8vw);
   z-index: 10;
 }
 
 .instagram-2 {
-  transform: translate(7vw, -2.8vw);
+  transform: translate(7.5vw, -1.8vw);
   z-index: 10;
+}
+
+.bt1 span,
+.nav-buttons {
+  display: inline-block;
+  font-size: clamp(0.8rem, 2.5vw, 2rem);
 }
 
 /* ================= 이벤트 메인 섹션 ================= */
@@ -90,8 +94,7 @@
   max-width: 1188px;
   background-color: #fff8b3;
   padding: 8vw 4vw;
-  margin: -4vw auto;
-  /* 음수 제거 → 전체 높이 확보 */
+  margin: -1.5vw auto;
   box-sizing: border-box;
   border-radius: 10px;
 }
@@ -245,6 +248,18 @@
   .nav-buttons {
     transform: translate(-2vw, -3vw);
   }
+
+  .event {
+    margin: -2.5vw auto;
+  }
+
+  .shopping-bag2 {
+    transform: translate(7.5vw, -2.8vw);
+  }
+
+  .instagram-2 {
+    transform: translate(7.5vw, -2.8vw);
+  }
 }
 
 /***************768***********************/
@@ -264,6 +279,7 @@
 
   .event {
     padding: 5vw 5vw;
+    margin: -3.5vw auto;
   }
 
   .nav-buttons {
@@ -312,6 +328,10 @@
     font-size: 1.5rem;
   }
 
+  .event {
+    margin: -7vw auto;
+  }
+
   .event-congratulations-1 {
     font-size: 1.2rem;
   }
@@ -325,6 +345,10 @@
 
 /***************375px***********************/
 @media (max-width: 375px) {
+  .page-title img {
+    max-width: 375px;
+  }
+
   .nav-buttons {
     font-size: 1rem;
     transform: translate(-9%, -3vw);
@@ -343,9 +367,15 @@
   .shopping-bag2,
   .instagram-2 {
     width: 4.5vw;
-    /* ✅ 화면폭 기준 비율 (375px 기준 약 9px 정도) */
     height: 4.5vw;
-    transform: translate(50%, -53%);
+  }
+
+  .event {
+    margin: -7vw auto;
+  }
+
+  .story-nav {
+    gap: 6%;
   }
 
   .reviews-1,

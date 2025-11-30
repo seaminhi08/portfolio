@@ -7,33 +7,50 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
 }
 
-/*==============================================================================*/
-/* ✅ 스토리 콘텐츠 */
+/**************************************************
+기본 구조 / Story Section
+**************************************************/
 .story-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  gap: 40px;
+  background-color: #fff;
+  min-height: 100vh;
   box-sizing: border-box;
 }
 
-/*==============================================================================*/
-/* ✅ 상단 타이틀 */
+/**************************************************
+상단 타이틀
+**************************************************/
 .page-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-  padding: 0;
-  margin: 0;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
 }
 
 .page-title img {
-  display: block;
-  /* ✅ 인라인 간격 제거 */
   width: 100%;
-  /* ✅ 화면 전체 꽉 채움 */
   height: auto;
+  display: block;
+}
+
+/**************************************************
+브랜드 배너
+**************************************************/
+.page-bs {
+  position: absolute;
+  left: 50%;
+  bottom: 11%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.page-bs img {
+  width: 100%;
+  max-width: 520px;
 }
 
 .page-title h1 {
@@ -59,23 +76,26 @@ body {
 .story-nav>.nav-button {
   padding: 2rem 6rem;
   font-size: 0.95rem;
-  border: none;
+  border: 0.1rem solid transparent;
   color: #444;
-  background-color: rgba(219, 157, 40, 0.7);
+  background-color: rgba(255, 195, 83, 0.7);
   border-radius: 0.6rem;
   font-weight: bold;
   transition: background 0.2s, color 0.2s;
+  transform: translate(1%, -45%);
 }
 
+
 .nav-button:hover {
-  background-color: #fb9a11;
+  background-color: #f3d2b1;
   color: #fff;
 }
 
 .nav-button.active {
-  background-color: #e74c3c;
+  background-color: #c4a97a;
   color: #fff;
 }
+
 
 /*==============================================================================*/
 /* ✅ 지도 섹션 */
@@ -88,7 +108,7 @@ body {
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
-  top: -5.3rem;
+  top: -2.3rem;
 }
 
 .map {
@@ -380,6 +400,10 @@ body {
 
 /*==============================================================================*/
 @media (max-width: 1024px) {
+  .page-bs img {
+    width: 66%;
+  }
+
   .search-box {
     left: 50%;
   }
@@ -389,6 +413,21 @@ body {
 
 /* ---------- 네비게이션 수정 ---------- */
 @media (max-width: 768px) {
+
+  /***************배너페이지******************/
+  .page-bs img {
+    width: 66%;
+    margin: 0 18%;
+  }
+
+  .button-wrap {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 2vw;
+  }
+
+
+
   .story-nav {
     position: relative;
     transform: none;
@@ -415,12 +454,7 @@ body {
     padding: 1rem 4.2rem;
     font-size: 0.9rem;
     border-radius: 6px;
-    transform: translateY(-75%);
-  }
-
-  .story-nav .nav-button.active {
-    background-color: #e74c3c;
-    color: #fff;
+    transform: translateY(-132%);
   }
 
   .map {
@@ -438,15 +472,12 @@ body {
     padding-bottom: 0;
   }
 
-  .page-title img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  .branch-title h2 {
+    top: 3vw;
   }
 
   .gallery-item {
-    transform: translate(-2%, 52%);
+    transform: translate(-2%, 64%);
   }
 
   .story-nav {
@@ -457,7 +488,7 @@ body {
   #mapImage {
     width: 100%;
     max-width: 768px;
-    margin-top: -2%;
+    margin-top: -19%;
   }
 
 }
@@ -474,7 +505,7 @@ body {
 
   .story-nav {
 
-    transform: translateY(-16%);
+    transform: translateY(-100%);
   }
 
   .search-box {
@@ -517,7 +548,7 @@ body {
   #mapImage {
     width: 100%;
     max-width: 480px;
-    margin-top: 1%;
+    margin-top: -26%;
   }
 
   .image-gallery {
@@ -558,7 +589,7 @@ body {
   #mapImage {
     width: 100%;
     max-width: 375px;
-    margin-top: 3%;
+    margin-top:-20%;
   }
 
   .text-wrapper {
@@ -607,5 +638,9 @@ body {
   .branch-title h2 {
     top: 2.5rem
   }
+      .nav-button.active, .story-nav>.nav-button {
+        padding: 0.4rem 2.7rem;
+        transform: translateY(-15vw);
+    }
 
 }

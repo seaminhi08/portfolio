@@ -60,7 +60,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -40px;
 }
 
 .button-wrap {
@@ -70,17 +69,22 @@
 }
 
 .menu {
-    padding: 10px 80px;
+    padding: 10px 70px;
     border: 1px solid #000;
     border-radius: 999px;
     background: #fff;
     color: #000;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.25s ease;
-    transform: translate(2vw, 59%);
+    transition: 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    box-sizing: border-box;
 }
+
 
 .menu:hover {
     background-color: #e6e6e6;
@@ -92,10 +96,10 @@
     border-color: #86aaa2;
 }
 
-/**************************************************
+
 /*******************************************소이***************************************/
 /* ================================
-   mixture 레시피 박스 (충돌 완전방지)
+mixture 레시피 박스 (충돌 완전방지)
 ================================ */
 .mix-box-sec {
     background-color: #f7e3cf;
@@ -205,9 +209,6 @@
         width: 66%
     }
 
-    .menu {
-        padding: 10px 60px;
-    }
 
     .item-left img {
         width: 300px;
@@ -246,33 +247,29 @@
             /* 중앙 정렬 해제 */
     }
 
+
+    /***************배너페이지******************/
     .page-bs img {
         width: 70%;
     }
 
     .button-wrap {
-        display: flex;
         flex-wrap: nowrap;
-        /* 🔥 줄바꿈 절대 금지 */
         justify-content: center;
         gap: 2vw;
-        /* 화면비례 간격 */
+    }
+
+    /****************버튼**********************/
+    .menu {
+        max-width: 30%;
+        font-size: 1.1rem;
+
     }
 
     .mix-box-sec {
         max-width: 760px;
     }
 
-    .menu {
-        flex: 1;
-        /* 🔥 3개가 동일한 비율로 나눠짐 */
-        max-width: 30%;
-        /* 🔥 너무 넓어지지 않게 제한 */
-
-        font-size: 1.1rem;
-        white-space: nowrap;
-        text-align: center;
-    }
 
     #image-switcher-container {
         width: 740px;
@@ -316,17 +313,35 @@
 /*480px*/
 @media (max-width: 480px) {
 
+    /****************배너**********************/
+
+    .button-wrap {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        /* 조금 더 완벽한 간격 */
+        padding-top: 6px;
+        /* 살짝 아래로 내려서 안정감 */
+    }
+
+    /***************배너페이지******************/
+    .page-bs {
+        bottom: 4%;
+        /* 더 올려서 겹침 방지 */
+        transform: translateX(-50%);
+    }
 
     .page-bs img {
-
-        width: 80%;
+        max-width: 300px;
+        /* 더 작게 */
     }
 
+    /**********버튼******************/
     .menu {
-        font-size: 1rem;
-        padding: 10px 30px;
+        padding: 8px 28px;
     }
 
+    .topping-item span,
     #image-switcher-container {
         width: 460px;
     }
@@ -342,20 +357,25 @@
     #sauceImage2 {
         max-width: 80%;
     }
-     .mix-box-sec {
+
+    .mix-box-sec {
         max-width: 450px;
     }
+
     .mix-sec-header h2 {
-    font-size: 0.8rem;}
+        font-size: 0.8rem;
+    }
 
-  .mix-sec-cards {
-      flex-wrap: wrap;
-      gap: 20px; /* gap도 줄여야 화면에 들어옴 */
-  }
+    .mix-sec-cards {
+        flex-wrap: wrap;
+        gap: 20px;
+        /* gap도 줄여야 화면에 들어옴 */
+    }
 
-  .mix-card {
-      width: 300px !important; /* 강제 적용 */
-  }
+    .mix-card {
+        width: 300px !important;
+        /* 강제 적용 */
+    }
 
     .soy-1 {
         font-size: 2.5rem;
@@ -373,6 +393,7 @@
 
     .soy-header {
         max-width: 375px;
+
     }
 
     .soy-recipe {
@@ -415,19 +436,25 @@
 
 }
 
-
-
-
-
 /*375px*/
 @media (max-width: 375px) {
 
-    .page-title img {
-        max-width: 375px;
+    /***************배너페이지******************/
+    .page-bs {
+        bottom: 4%;
+        /* 더 올려서 겹침 방지 */
+        transform: translateX(-50%);
     }
 
+    .page-bs img {
+        max-width: 300px;
+        /* 더 작게 */
+    }
+
+    /**********버튼******************/
     .menu {
-        padding: 8px 21px;
+        padding: 8px 19px;
+        font-size: 1rem;
     }
 
     #image-switcher-container {
@@ -445,23 +472,27 @@
     .soy-header {
         max-width: 601px;
     }
- .mix-box-sec {
+
+    .mix-box-sec {
         max-width: 360px;
     }
+
     .mix-sec-header h2 {
-    font-size: 0.8rem;
-white-space: nowrap ;
- transform: translate(-15%);  
-}
-.mix-card {
-    width: 300px;
-}
-.mix-sec-btn {
-    padding: 8px 6px;
-  white-space: nowrap ;
-  font-size: 1rem;
-  transform: translate(6%);  
-}
+        font-size: 0.8rem;
+        white-space: nowrap;
+        transform: translate(-15%);
+    }
+
+    .mix-card {
+        width: 300px;
+    }
+
+    .mix-sec-btn {
+        padding: 8px 6px;
+        white-space: nowrap;
+        font-size: 1rem;
+        transform: translate(6%);
+    }
 
     .soys-imgs {
         max-width: 306px;
