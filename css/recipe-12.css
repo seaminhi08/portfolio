@@ -1,31 +1,41 @@
+/*==============================================================================*/
+/* ✅ 기본 설정 */
+body {
+  margin: 0;
+  overflow-x: hidden;
+  /* 가로 스크롤 완전 차단 */
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/**************************************************
+기본 구조 / Story Section
+**************************************************/
 .story-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
-  /* 아이템 사이 간격 */
-
-  /* 페이지 전체 디자인 */
-  background-color: #ffff;
-  padding: 50px 20px;
+  gap: 40px;
+  background-color: #fff;
   min-height: 100vh;
   box-sizing: border-box;
 }
 
-/* 상단 타이틀 */
+/**************************************************
+상단 타이틀
+**************************************************/
 .page-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
 }
 
 .page-title img {
   width: 100%;
-  max-width: 1188px;
-  height: 400px;
-  transform: translateY(-60px);
+  height: auto;
+  display: block;
 }
-
 /**/
 /* 네비게이션 버튼 */
 .story-nav {
@@ -116,36 +126,6 @@
 .nav-buttons:last-child {
   border-right: none;
 }
-
-/*복사하기*/
-.story-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-  /* 아이템 사이 간격 */
-
-  /* 페이지 전체 디자인 */
-  background-color: #ffff;
-  padding: 50px 20px;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-
-/* 상단 타이틀 */
-.page-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.page-title img {
-  width: 100%;
-  max-width: 1188px;
-  height: 400px;
-  transform: translateY(-60px);
-}
-
 
 /* 네비게이션 버튼 */
 .story-nav {

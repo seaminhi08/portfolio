@@ -1,32 +1,42 @@
+/*==============================================================================*/
+/* ✅ 기본 설정 */
+body {
+  margin: 0;
+  overflow-x: hidden;
+  /* 가로 스크롤 완전 차단 */
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/**************************************************
+기본 구조 / Story Section
+**************************************************/
 .story-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 25px;
-  /* 아이템 사이 간격 */
-
-  /* 페이지 전체 디자인 */
-  background-color: #ffff;
-  padding: 50px 20px;
+  gap: 40px;
+  background-color: #fff;
   min-height: 100vh;
   box-sizing: border-box;
 }
 
-/* 상단 타이틀 */
+/**************************************************
+상단 타이틀
+**************************************************/
 .page-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
 }
 
 .page-title img {
   width: 100%;
-  max-width: 1188px;
-  height: 400px;
-  transform: translateY(-60px);
+  height: auto;
+  display: block;
 }
 
-/**/
 /* 네비게이션 버튼 */
 .story-nav {
   display: flex;
@@ -118,34 +128,6 @@
 }
 
 /*복사하기*/
-.story-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-  /* 아이템 사이 간격 */
-
-  /* 페이지 전체 디자인 */
-  background-color: #ffff;
-  padding: 50px 20px;
-  min-height: 100vh;
-  box-sizing: border-box;
-}
-
-/* 상단 타이틀 */
-.page-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.page-title img {
-  width: 100%;
-  max-width: 1188px;
-  height: 400px;
-  transform: translateY(-60px);
-}
-
 
 /* 네비게이션 버튼 */
 .story-nav {
@@ -608,7 +590,12 @@ hr.long-divider {
 
 /***************************1024px 반응형*********************************************/
 @media (max-width: 1024px) {
-
+.page-title img {
+    width: 100%;
+    max-width: 1024px;
+    height: 300px;
+  
+}
   .news-ss {
     text-align: justify;
     position: relative;
@@ -641,7 +628,12 @@ hr.long-divider {
 
 /***************************768**px 반응형*******************************************/
 @media (max-width: 768px) {
-
+.page-title img {
+    width: 100%;
+    max-width: 768px;
+    height: 200px;
+  
+}
   .recipe-search-form-form-a {
     flex-direction: column;
     align-items: stretch;
@@ -739,6 +731,12 @@ hr.long-divider {
 
 /**************************수정******************************************************/
 @media (max-width: 480px) {
+  .page-title img {
+    width: 100%;
+    max-width: 480px;
+    height: 150px;
+  
+}
 
   .recipe-search-form-form-a {
     flex-direction: column;
@@ -812,7 +810,12 @@ hr.long-divider {
 
 
 @media (max-width: 375px) {
-
+  .page-title img {
+    width: 100%;
+    max-width: 375px;
+    height: 100px;
+  
+}
   .search-input {
     font-size: 0.5rem;
     border-radius: 0 10px 10px 0;
